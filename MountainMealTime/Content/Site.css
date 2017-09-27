@@ -1,0 +1,70 @@
+﻿body {
+    padding-top: 50px;
+    padding-bottom: 20px;
+    background-image: url('Images/GymBackground.jpg');
+    background-size: 100%;
+}
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    margin-left: 0%;
+    margin-right: 0%;
+    max-width: 100%;
+    padding: 0px;
+}
+
+/* Override the default bootstrap behavior where horizontal description lists 
+   will truncate terms that are too long to fit in the left column 
+*/
+.dl-horizontal dt {
+    white-space: normal;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+    max-width: 280px;
+}
+
+.jumbotron {
+    background-color: rgba(0,0,0,.7);
+    color: white;
+    padding-left: 0%;
+    padding-right: 0%;
+    text-align: center;
+}
+
+.jumbotron > h1 {
+    color: goldenrod;
+    font-size: 150px;
+    font-weight: bold;
+}
+
+.jumbotron > img {
+    position: relative;
+    left: 0px;
+}
+
+.lead {
+    font-size: 55px;
+    text-align: center;
+    margin-bottom: 0px;
+}
+
+.sub-head {
+    color: goldenrod;
+    font-size: 90px;
+    font-weight: bold;
+}
+
+.clock-row {
+    background-color: rgba(0,0,0,.7);
+}
+
+.clock {
+    color: goldenrod;
+    font-size: 150px;
+    font-weight: bold;
+    text-align: center;
+}
