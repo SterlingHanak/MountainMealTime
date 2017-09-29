@@ -3,6 +3,8 @@
     padding-bottom: 20px;
     background-image: url('Images/GymBackground.jpg');
     background-size: 100%;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
 }
 
 /* Set padding to keep content from hitting the edges */
@@ -33,6 +35,9 @@ textarea {
     padding-left: 0%;
     padding-right: 0%;
     text-align: center;
+    border-bottom-style: solid;
+    border-bottom-color: goldenrod;
+    border-bottom-width: 10px;
 }
 
 .jumbotron > h1 {
@@ -60,11 +65,38 @@ textarea {
 
 .clock-row {
     background-color: rgba(0,0,0,.7);
+    border-top-style: solid;
+    border-bottom-style: solid;
+    border-top-color: goldenrod;
+    border-bottom-color: goldenrod;
+    border-top-width: 10px;
+    border-bottom-width: 10px;
 }
 
 .clock {
     color: goldenrod;
     font-size: 150px;
     font-weight: bold;
+    text-align: center;
+}
+
+.timeMessage {
+    font-size: 150px;
+    font-weight: bold;
+    text-align: center;
+    color: white;
+}
+
+.timeImage {
+    position: relative;
+    left: 30%;
+    right: 20%;
+    margin-bottom: 5%;
+}
+
+.mealInfo {
+    color: white;
+    font-weight: bold;
+    font-size: 120px;
     text-align: center;
 }

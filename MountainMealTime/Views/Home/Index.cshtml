@@ -14,40 +14,52 @@
 }; }
 
 
-        @{
-            ViewBag.Title = "Home Page";
+@{
+    ViewBag.Title = "Home Page";
+}
+
+<div class="jumbotron">
+    <h1>MOUNTAIN MEAL TIME</h1>
+    <div class="row">
+        <img class="col-md-4" src="~/Content/Images/MountainAngry.jpg" />
+        <p class="lead col-md-8">Do you desire to become as big as Icelandic strongman Hafþór Júlíus Björnsson?  You can train all you want, but you will never become a 441 pound 'Mountain' of pure muscle unless you <p class="sub-head">EAT LIKE THE MOUNTAIN. </p></p>
+    </div>
+</div>
+
+<div class="row clock-row">
+    <div class="clock col-md-12">
+        <p>CURRENT TIME: @DateTime.Now.ToString("t")</p>
+    </div>
+
+    @{
+        bool isMealTime = false;
+        string currentMeal = "";
+    }
+
+    @foreach (KeyValuePair<string, string> food in meals)
+    {
+        //if (Convert.ToDateTime(food.Key) >= DateTime.Now && Convert.ToDateTime(food.Key) <= DateTime.Now.AddMinutes(5))
+        if (DateTime.Now >= Convert.ToDateTime(food.Key) && DateTime.Now <= Convert.ToDateTime(food.Key).AddMinutes(5))
+        {
+            isMealTime = true;
+            currentMeal = food.Value;
         }
+    }
 
-        <div class="jumbotron">
-            <h1>MOUNTAIN MEAL TIME</h1>
-            <div class="row">
-                <img class="col-md-4" src="~/Content/Images/MountainAngry.jpg" />
-                <p class="lead col-md-8">Do you desire to become as big as Icelandic strongman Hafþór Júlíus Björnsson?  You can train all you want, but you will never become a 441 pound 'Mountain' of pure muscle unless you <p class="sub-head">EAT LIKE THE MOUNTAIN. </p></p>
-            </div>
-        </div>
-
-        <div class="row clock-row">
-            <div class="clock col-md-12">
-                <p>CURRENT TIME: @DateTime.Now.ToString("t")</p>
-            </div>
-            @foreach (KeyValuePair<string, string> food in meals)
-            {
-                if (Convert.ToDateTime(food.Key) >= DateTime.Now && Convert.ToDateTime(food.Key) <= DateTime.Now.AddMinutes(5))
-                {
-                    <div class="col-md-12"><p class="timeToEat">TIME TO EAT</p></div>
-                    <div class="col-md-3"><img src="~/Content/Images/MountainEating.gif" /></div>
-                    <div class="col-md-9"><p class="mealInfo">@food.Value</p></div>
-                }
-                else if (DateTime.Now >= Convert.ToDateTime("11:00:00 PM") && DateTime.Now <= Convert.ToDateTime("6:30:00 AM"))
-                {
-                    <div class="col-md-6"><img src="~/Content/Images/MountainSleep.jpg" /></div>
-                    <div class="col-md-6"><p>TIME TO SLEEP</p></div>
-                }
-                else
-                {
-                    <div class="col-md-6"><img src="~/Content/Images/MountainLift.gif" /></div>
-                    <div class="col-md-6"><p>TIME TO LIFT</p></div>
-                }
-            }
-        </div>
-
+    @if (isMealTime == true)
+    {
+        <div class="col-md-12"><p class="timeMessage">TIME TO EAT!</p></div>
+        <div class="col-md-3"><img class="timeImage" src="~/Content/Images/MountainEating.gif" /></div>
+        <div class="col-md-9"><p class="mealInfo">@currentMeal</p></div>
+    }
+    else if (DateTime.Now >= Convert.ToDateTime("11:00:00 PM") && DateTime.Now <= Convert.ToDateTime("6:30:00 AM"))
+    {
+        <div class="col-md-6"><img class="timeImage" src="~/Content/Images/MountainSleep.jpg" /></div>
+        <div class="col-md-6"><p class="timeMessage">TIME TO SLEEP!</p></div>
+    }
+    else
+    {
+        <div class="col-md-12"><p class="timeMessage">TIME TO LIFT!</p></div>
+        <div class="col-md-12"><img class="timeImage" src="~/Content/Images/MountainLift.gif" /></div>
+    }
+</div>
