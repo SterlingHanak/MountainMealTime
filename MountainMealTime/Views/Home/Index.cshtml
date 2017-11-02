@@ -34,11 +34,11 @@
     @{
         bool isMealTime = false;
         string currentMeal = "";
+        DateTime? countdownTime = null;
     }
 
     @foreach (KeyValuePair<string, string> food in meals)
     {
-        //if (Convert.ToDateTime(food.Key) >= DateTime.Now && Convert.ToDateTime(food.Key) <= DateTime.Now.AddMinutes(5))
         if (DateTime.Now >= Convert.ToDateTime(food.Key) && DateTime.Now <= Convert.ToDateTime(food.Key).AddMinutes(5))
         {
             isMealTime = true;
@@ -49,8 +49,9 @@
     @if (isMealTime == true)
     {
         <div class="col-md-12"><p class="timeMessage">TIME TO EAT!</p></div>
-        <div class="col-md-3"><img class="timeImage" src="~/Content/Images/MountainEating.gif" /></div>
-        <div class="col-md-9"><p class="mealInfo">@currentMeal</p></div>
+        <div class="col-md-12"><p class="mealInfo">@currentMeal</p></div>
+        <div class="col-md-12"><img id="eatingImage" src="~/Content/Images/MountainEating.gif" /></div>
+
     }
     else if (DateTime.Now >= Convert.ToDateTime("11:00:00 PM") && DateTime.Now <= Convert.ToDateTime("6:30:00 AM"))
     {
@@ -62,4 +63,22 @@
         <div class="col-md-12"><p class="timeMessage">TIME TO LIFT!</p></div>
         <div class="col-md-12"><img class="timeImage" src="~/Content/Images/MountainLift.gif" /></div>
     }
+
+    @if (DateTime.Now >= Convert.ToDateTime("6:50:00 AM") && DateTime.Now < Convert.ToDateTime("7:30:00 AM")) { countdownTime = Convert.ToDateTime("7:30:00 AM"); }
+    else if (DateTime.Now >= Convert.ToDateTime("7:30:00 AM") && DateTime.Now < Convert.ToDateTime("9:30:00 AM")) { countdownTime = Convert.ToDateTime("9:30:00 AM"); }
+    else if (DateTime.Now >= Convert.ToDateTime("9:30:00 AM") && DateTime.Now < Convert.ToDateTime("11:50:00 AM")) { countdownTime = Convert.ToDateTime("11:50:00 AM"); }
+    else if (DateTime.Now >= Convert.ToDateTime("11:50:00 AM") && DateTime.Now < Convert.ToDateTime("12:00:00 PM")) { countdownTime = Convert.ToDateTime("12:00:00 PM"); }
+    else if (DateTime.Now >= Convert.ToDateTime("12:00:00 PM") && DateTime.Now < Convert.ToDateTime("2:00:00 PM")) { countdownTime = Convert.ToDateTime("2:00:00 PM"); }
+    else if (DateTime.Now >= Convert.ToDateTime("2:00:00 PM") && DateTime.Now < Convert.ToDateTime("2:30:00 PM")) { countdownTime = Convert.ToDateTime("2:30:00 PM"); }
+    else if (DateTime.Now >= Convert.ToDateTime("2:30:00 PM") && DateTime.Now < Convert.ToDateTime("5:30:00 PM")) { countdownTime = Convert.ToDateTime("5:30:00 PM"); }
+    else if (DateTime.Now >= Convert.ToDateTime("5:30:00 PM") && DateTime.Now < Convert.ToDateTime("6:00:00 PM")) { countdownTime = Convert.ToDateTime("6:00:00 PM"); }
+    else if (DateTime.Now >= Convert.ToDateTime("6:00:00 PM") && DateTime.Now < Convert.ToDateTime("8:30:00 PM")) { countdownTime = Convert.ToDateTime("8:30:00 PM"); }
+    else if (DateTime.Now >= Convert.ToDateTime("8:30:00 PM") && DateTime.Now < Convert.ToDateTime("10:30:00 PM")) { countdownTime = Convert.ToDateTime("10:30:00 PM"); }
+    else if (DateTime.Now >= Convert.ToDateTime("10:30:00 PM")) { countdownTime = Convert.ToDateTime("6:50:00 AM"); }
+
+    <p id="nextMeal" style="display: none;">@countdownTime</p>
+    <div class="countDownMeal">TIME UNTIL NEXT MEAL: <p id="demo"></p></div>
+
+<script async defer src="~/Scripts/Countdown.js"></script>
+
 </div>

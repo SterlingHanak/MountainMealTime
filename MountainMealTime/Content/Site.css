@@ -7,6 +7,11 @@
     background-attachment: fixed;
 }
 
+.navbar {
+    text-align: left;
+    display: none;
+}
+
 /* Set padding to keep content from hitting the edges */
 .body-content {
     margin-left: 0%;
@@ -37,7 +42,10 @@ textarea {
     text-align: center;
     border-bottom-style: solid;
     border-bottom-color: goldenrod;
-    border-bottom-width: 10px;
+    border-bottom-width: 8px;
+    border-top-style: solid;
+    border-top-color: goldenrod;
+    border-top-width: 8px;
 }
 
 .jumbotron > h1 {
@@ -69,8 +77,8 @@ textarea {
     border-bottom-style: solid;
     border-top-color: goldenrod;
     border-bottom-color: goldenrod;
-    border-top-width: 10px;
-    border-bottom-width: 10px;
+    border-top-width: 8px;
+    border-bottom-width: 8px;
 }
 
 .clock {
@@ -95,8 +103,29 @@ textarea {
 }
 
 .mealInfo {
-    color: white;
+    color: goldenrod;
     font-weight: bold;
     font-size: 120px;
+    text-align: center;
+}
+
+#eatingImage {
+    position: relative;
+    left: 37%;
+    right: 20%;
+    margin-bottom: 5%;
+}
+
+.countDownMeal {
+    font-size: 150px;
+    font-weight: bold;
+    text-align: center;
+    color: white;
+}
+
+#demo {
+    font-size: 150px;
+    font-weight: bold;
+    color: goldenrod;
     text-align: center;
 }
