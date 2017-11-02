@@ -13,10 +13,7 @@
     {"10:30:00 PM", "50 grams of Casein Protein." }
 }; }
 
-
-@{
-    ViewBag.Title = "Home Page";
-}
+@{ViewBag.Title = "Mountain Meal Time";}
 
 <div class="jumbotron">
     <h1>MOUNTAIN MEAL TIME</h1>
@@ -74,7 +71,7 @@
     else if (DateTime.Now >= Convert.ToDateTime("5:30:00 PM") && DateTime.Now < Convert.ToDateTime("6:00:00 PM")) { countdownTime = Convert.ToDateTime("6:00:00 PM"); }
     else if (DateTime.Now >= Convert.ToDateTime("6:00:00 PM") && DateTime.Now < Convert.ToDateTime("8:30:00 PM")) { countdownTime = Convert.ToDateTime("8:30:00 PM"); }
     else if (DateTime.Now >= Convert.ToDateTime("8:30:00 PM") && DateTime.Now < Convert.ToDateTime("10:30:00 PM")) { countdownTime = Convert.ToDateTime("10:30:00 PM"); }
-    else if (DateTime.Now >= Convert.ToDateTime("10:30:00 PM")) { countdownTime = Convert.ToDateTime("6:50:00 AM"); }
+    else { countdownTime = Convert.ToDateTime("6:50:00 AM"); }
 
     <p id="nextMeal" style="display: none;">@countdownTime</p>
     <div class="countDownMeal">TIME UNTIL NEXT MEAL: <p id="demo"></p></div>

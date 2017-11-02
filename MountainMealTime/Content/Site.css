@@ -1,6 +1,4 @@
 ﻿body {
-    padding-top: 50px;
-    padding-bottom: 20px;
     background-image: url('Images/GymBackground.jpg');
     background-size: 100%;
     background-repeat: no-repeat;
@@ -9,6 +7,10 @@
 
 .navbar {
     text-align: left;
+    display: none;
+}
+
+footer {
     display: none;
 }
 
@@ -93,6 +95,7 @@ textarea {
     font-weight: bold;
     text-align: center;
     color: white;
+    margin-bottom: 0px;
 }
 
 .timeImage {
