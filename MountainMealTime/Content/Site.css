@@ -85,13 +85,17 @@ textarea {
 
 .clock {
     color: goldenrod;
-    font-size: 150px;
+    font-size: 125px;
     font-weight: bold;
     text-align: center;
 }
 
+.clock > p {
+    margin-bottom: 0px;
+}
+
 .timeMessage {
-    font-size: 150px;
+    font-size: 130px;
     font-weight: bold;
     text-align: center;
     color: white;
@@ -103,6 +107,14 @@ textarea {
     left: 30%;
     right: 20%;
     margin-bottom: 5%;
+}
+
+.sleepImage {
+    height: 25%;
+    width: 30%;
+    position: relative;
+    left: 35%;
+    margin-bottom: 0px;
 }
 
 .mealInfo {
@@ -120,15 +132,17 @@ textarea {
 }
 
 .countDownMeal {
-    font-size: 150px;
+    font-size: 100px;
     font-weight: bold;
-    text-align: center;
+    text-align: left;
     color: white;
+    padding-left: 25px;
 }
 
 #demo {
-    font-size: 150px;
+    font-size: 125px;
     font-weight: bold;
     color: goldenrod;
     text-align: center;
+    display: inline-block;
 }

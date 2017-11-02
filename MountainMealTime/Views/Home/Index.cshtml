@@ -50,10 +50,10 @@
         <div class="col-md-12"><img id="eatingImage" src="~/Content/Images/MountainEating.gif" /></div>
 
     }
-    else if (DateTime.Now >= Convert.ToDateTime("11:00:00 PM") && DateTime.Now <= Convert.ToDateTime("6:30:00 AM"))
+    else if (DateTime.Now <= Convert.ToDateTime("6:30:00 AM"))
     {
-        <div class="col-md-6"><img class="timeImage" src="~/Content/Images/MountainSleep.jpg" /></div>
-        <div class="col-md-6"><p class="timeMessage">TIME TO SLEEP!</p></div>
+        <div class="col-md-12"><p class="timeMessage">TIME TO SLEEP!</p></div>
+        <div class="col-md-12"><img class="timeImage sleepImage" src="~/Content/Images/MountainSleep.jpg" /></div>
     }
     else
     {
@@ -71,6 +71,7 @@
     else if (DateTime.Now >= Convert.ToDateTime("5:30:00 PM") && DateTime.Now < Convert.ToDateTime("6:00:00 PM")) { countdownTime = Convert.ToDateTime("6:00:00 PM"); }
     else if (DateTime.Now >= Convert.ToDateTime("6:00:00 PM") && DateTime.Now < Convert.ToDateTime("8:30:00 PM")) { countdownTime = Convert.ToDateTime("8:30:00 PM"); }
     else if (DateTime.Now >= Convert.ToDateTime("8:30:00 PM") && DateTime.Now < Convert.ToDateTime("10:30:00 PM")) { countdownTime = Convert.ToDateTime("10:30:00 PM"); }
+    else if (DateTime.Now >= Convert.ToDateTime("10:30:00 PM") && DateTime.Now < Convert.ToDateTime("11:59:99 PM")) { countdownTime = Convert.ToDateTime("6:50:00 AM").AddDays(1); }
     else { countdownTime = Convert.ToDateTime("6:50:00 AM"); }
 
     <p id="nextMeal" style="display: none;">@countdownTime</p>
