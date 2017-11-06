@@ -153,10 +153,10 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Images\GymBackground.jpg" />
     <Content Include="Content\Images\MountainAngry.jpg" />
-    <Content Include="Content\Images\MountainBench.mp4" />
     <Content Include="Content\Images\MountainEating.gif" />
     <Content Include="Content\Images\MountainLift.gif" />
     <Content Include="Content\Images\MountainSleep.jpg" />
+    <Content Include="Content\Images\Thor2.jpg" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -167,6 +167,7 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Scripts\Clock.js" />
     <Content Include="Scripts\Countdown.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />

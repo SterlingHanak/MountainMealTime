@@ -18,16 +18,27 @@
 <div class="jumbotron">
     <h1>MOUNTAIN MEAL TIME</h1>
     <div class="row">
-        <img class="col-md-4" src="~/Content/Images/MountainAngry.jpg" />
-        <p class="lead col-md-8">Do you desire to become as big as Icelandic strongman Hafþór Júlíus Björnsson?  You can train all you want, but you will never become a 441 pound 'Mountain' of pure muscle unless you <p class="sub-head">EAT LIKE THE MOUNTAIN. </p></p>
+        @*<img class="col-md-4" src="~/Content/Images/MountainAngry.jpg" />*@
+        <p class="lead col-md-12">Do you want to become as big as Icelandic strongman Hafþór Júlíus Björnsson?  You can train all you want, but you will never become a 441 pound 'Mountain' of pure muscle unless you <p class="sub-head">EAT LIKE THE MOUNTAIN. </p></p>
+        <hr />
+        <img class="col-md-5" src="~/Content/Images/MountainAngry.jpg" />
+
+        <div class="clocks col-md-7">
+            <div class="currentTime">CURRENT TIME</div>
+            <div class="clock">
+                <div class="clock-face">
+                    <div class="hand hour-hand"></div>
+                    <div class="hand min-hand"></div>
+                    <div class="hand sec-hand"></div>
+                </div>
+            </div>
+            <div class="currentTime">@DateTime.Now.ToString("t")</div>
+        </div>
     </div>
+    <hr />
 </div>
 
-<div class="row clock-row">
-    <div class="clock col-md-12">
-        <p>CURRENT TIME: @DateTime.Now.ToString("t")</p>
-    </div>
-
+<div class="row">
     @{
         bool isMealTime = false;
         string currentMeal = "";
@@ -47,18 +58,18 @@
     {
         <div class="col-md-12"><p class="timeMessage">TIME TO EAT!</p></div>
         <div class="col-md-12"><p class="mealInfo">@currentMeal</p></div>
-        <div class="col-md-12"><img id="eatingImage" src="~/Content/Images/MountainEating.gif" /></div>
+        <div class="col-md-12 imageRow"><img id="eatingImage" src="~/Content/Images/MountainEating.gif" /></div>
 
     }
     else if (DateTime.Now <= Convert.ToDateTime("6:30:00 AM"))
     {
         <div class="col-md-12"><p class="timeMessage">TIME TO SLEEP!</p></div>
-        <div class="col-md-12"><img class="timeImage sleepImage" src="~/Content/Images/MountainSleep.jpg" /></div>
+        <div class="col-md-12 imageRow"><img class="timeImage sleepImage" src="~/Content/Images/MountainSleep.jpg" /></div>
     }
     else
     {
         <div class="col-md-12"><p class="timeMessage">TIME TO LIFT!</p></div>
-        <div class="col-md-12"><img class="timeImage" src="~/Content/Images/MountainLift.gif" /></div>
+        <div class="col-md-12 imageRow"><img class="timeImage" src="~/Content/Images/MountainLift.gif" /></div>
     }
 
     @if (DateTime.Now >= Convert.ToDateTime("6:50:00 AM") && DateTime.Now < Convert.ToDateTime("7:30:00 AM")) { countdownTime = Convert.ToDateTime("7:30:00 AM"); }
@@ -77,6 +88,7 @@
     <p id="nextMeal" style="display: none;">@countdownTime</p>
     <div class="countDownMeal">TIME UNTIL NEXT MEAL: <p id="demo"></p></div>
 
+<script async defer src="~/Scripts/Clock.js"></script>
 <script async defer src="~/Scripts/Countdown.js"></script>
 
 </div>

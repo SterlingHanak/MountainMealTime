@@ -11,7 +11,15 @@
 }
 
 footer {
-    display: none;
+    background-color: rgba(0,0,0,.9);
+    height: 80px;
+    padding-left: 1%;
+}
+
+footer > p {
+    margin-bottom: 0px;
+    font-size: 25px;
+    color: goldenrod;
 }
 
 /* Set padding to keep content from hitting the edges */
@@ -37,28 +45,39 @@ textarea {
 }
 
 .jumbotron {
-    background-color: rgba(0,0,0,.7);
+    background-color: rgba(0,0,0,.8);
     color: white;
     padding-left: 0%;
     padding-right: 0%;
+    padding-bottom: 25px;
     text-align: center;
-    border-bottom-style: solid;
-    border-bottom-color: goldenrod;
-    border-bottom-width: 8px;
-    border-top-style: solid;
-    border-top-color: goldenrod;
-    border-top-width: 8px;
+    margin-bottom: 0px;
+    line-height: 90px;
+}
+
+hr {
+    border-color: goldenrod;
+    border-width: 15px;
+    margin: 0px;
+    padding-bottom: 30px;
 }
 
 .jumbotron > h1 {
-    color: goldenrod;
     font-size: 150px;
     font-weight: bold;
+    margin-top: 0px;
+    margin-bottom: 20px;
+    background-color: goldenrod;
+    color: black;
 }
 
 .jumbotron > img {
     position: relative;
     left: 0px;
+}
+
+.jumbotron > .row {
+    padding-bottom: 30px;
 }
 
 .lead {
@@ -69,44 +88,73 @@ textarea {
 
 .sub-head {
     color: goldenrod;
-    font-size: 90px;
+    font-size: 94px;
     font-weight: bold;
 }
 
-.clock-row {
-    background-color: rgba(0,0,0,.7);
-    border-top-style: solid;
-    border-bottom-style: solid;
-    border-top-color: goldenrod;
-    border-bottom-color: goldenrod;
-    border-top-width: 8px;
-    border-bottom-width: 8px;
+.currentTime {
+    color: goldenrod;
+    font-size: 100px;
 }
 
-.clock {
+.clocks {
     color: goldenrod;
-    font-size: 125px;
     font-weight: bold;
     text-align: center;
 }
 
-.clock > p {
-    margin-bottom: 0px;
+/*Clock*/
+.clock {
+    width: 30rem;
+    height: 30rem;
+    border: 20px solid goldenrod;
+    border-radius: 50%;
+    margin: 50px auto;
+    position: relative;
+    padding: 2rem;
+    margin-bottom: 35px;
+    margin-top: 20px;
+}
+
+.clock-face {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transform: translateY(-3px); /* account for the height of the clock hands */
+}
+
+.hand {
+    width: 50%;
+    height: 6px;
+    background: goldenrod;
+    position: absolute;
+    top: 50%;
+    transform-origin: 100%;
+    transform: rotate(90deg);
+    transition: all 0.05s;
+    transition-timing-function: cubic-bezier(0.1, 2.7, 0.58, 1);
 }
 
 .timeMessage {
-    font-size: 130px;
+    font-size: 160px;
     font-weight: bold;
     text-align: center;
-    color: white;
+    color: goldenrod;
     margin-bottom: 0px;
+    background-color: rgba(0,0,0,.8);
+    line-height: 155px;
+}
+
+.imageRow {
+    background-color: rgba(0,0,0,.8);
 }
 
 .timeImage {
     position: relative;
-    left: 30%;
-    right: 20%;
-    margin-bottom: 5%;
+    left: 34%;
+    right: 24%;
+    margin-bottom: 25px;
+    margin-top: 15px;
 }
 
 .sleepImage {
@@ -118,10 +166,12 @@ textarea {
 }
 
 .mealInfo {
-    color: goldenrod;
     font-weight: bold;
-    font-size: 120px;
+    font-size: 100px;
     text-align: center;
+    margin-bottom: 0px;
+    background-color: rgba(0,0,0,.8);
+    color: goldenrod;
 }
 
 #eatingImage {
@@ -129,20 +179,23 @@ textarea {
     left: 37%;
     right: 20%;
     margin-bottom: 5%;
+    margin-top: 1%;
 }
 
 .countDownMeal {
     font-size: 100px;
     font-weight: bold;
     text-align: left;
-    color: white;
+    color: black;
     padding-left: 25px;
+    background-color: goldenrod;
+    line-height: 130px;
 }
 
 #demo {
-    font-size: 125px;
+    font-size: 120px;
     font-weight: bold;
-    color: goldenrod;
+    color: black;
     text-align: center;
     display: inline-block;
 }
