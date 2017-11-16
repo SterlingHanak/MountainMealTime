@@ -18,11 +18,11 @@
 <div class="jumbotron">
     <h1>MOUNTAIN MEAL TIME</h1>
     <div class="row">
-        @*<img class="col-md-4" src="~/Content/Images/MountainAngry.jpg" />*@
         <p class="lead col-md-12">Do you want to become as big as Icelandic strongman Hafþór Júlíus Björnsson?  You can train all you want, but you will never become a 441 pound 'Mountain' of pure muscle unless you <p class="sub-head">EAT LIKE THE MOUNTAIN. </p></p>
         <hr />
+        
+        <div class="timeBar">
         <img class="col-md-5" src="~/Content/Images/MountainAngry.jpg" />
-
         <div class="clocks col-md-7">
             <div class="currentTime">CURRENT TIME</div>
             <div class="clock">
@@ -34,11 +34,12 @@
             </div>
             <div class="currentTime">@DateTime.Now.ToString("t")</div>
         </div>
+        </div>
     </div>
     <hr />
 </div>
 
-<div class="row">
+<div class="row messageRow">
     @{
         bool isMealTime = false;
         string currentMeal = "";
@@ -89,6 +90,7 @@
     <div class="countDownMeal">TIME UNTIL NEXT MEAL: <p id="demo"></p></div>
 
 <script async defer src="~/Scripts/Clock.js"></script>
+<script type="text/javascript" src="http://www.cornify.com/js/cornify.js"></script>
 <script async defer src="~/Scripts/Countdown.js"></script>
 
 </div>
